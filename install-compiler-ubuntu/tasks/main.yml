@@ -1,0 +1,19 @@
+---
+- name: update repo
+  become: true
+  apt:
+    update_cache: yes
+- name: install compiler ubuntu
+  become: true
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - build-essential
+      - libreadline-dev
+      - libssl-dev
+      - python-dev
+      - libselinux-dev
+      - zlib1g-dev
+      - bison
+      - flex

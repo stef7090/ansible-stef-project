@@ -1,0 +1,11 @@
+---
+- debug:
+    msg: ansible_ssh_user='{{ansible_ssh_user}}'
+- debug:
+    msg: ansible_user_dir='{{ansible_user_dir}}'
+- name: download the latest release from postgre
+  unarchive:
+    src: https://github.com/postgres/postgres/archive/REL_11_3.tar.gz
+    dest: /home/{{ ansible_ssh_user }}
+    remote_src: yes
+

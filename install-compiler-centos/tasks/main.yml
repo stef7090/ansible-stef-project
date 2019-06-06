@@ -1,0 +1,12 @@
+---
+- name: install compiler centOS
+  become: true
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - "@Development tools"
+      - readline-devel
+      - python-devel
+      - libselinux-devel
+      - openssl-devel
